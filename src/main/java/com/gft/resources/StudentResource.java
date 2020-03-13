@@ -32,7 +32,6 @@ public class StudentResource {
 	@GetMapping("/two")
 	public ResponseEntity<List<User>> getStudentTwo() {
 		User u = new User();
-		u.setId("15946");
 		u.setName("Nerso Teste insert second domain");
 		userRepoTwo.save(u);
 		return ResponseEntity.status(200).body(userRepoTwo.findAll());
@@ -42,7 +41,6 @@ public class StudentResource {
 	public ResponseEntity<User> saveStudent(@RequestBody User student) {		
 		System.out.println(student);
 		User u = new User();
-		u.setId(student.getId());
 		u.setName(student.getName());
 		userRepoTwo.save(u);
 		return ResponseEntity.status(200).body(userRepository.save(student));
@@ -51,13 +49,11 @@ public class StudentResource {
 	@GetMapping("/load-data")
 	public ResponseEntity<String> loadData(){
 		User student = new User();
-		student.setId("1");
 		student.setName("Mcclain");
 		
 		userRepository.save(student);
 		
 		student = new User();
-		student.setId("2");
 		student.setName("Dostoievski");
 		
 		userRepository.save(student);		
