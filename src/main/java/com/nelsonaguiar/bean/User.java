@@ -31,6 +31,8 @@ public class User implements Serializable {
 	@JsonProperty("name")
 	@Column(name="name")
 	private String name = null;
+	
+	private Integer idade;
 
 	public Long getId() {
 		return id;
